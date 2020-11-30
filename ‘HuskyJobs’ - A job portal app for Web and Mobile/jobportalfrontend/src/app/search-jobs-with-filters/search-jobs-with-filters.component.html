@@ -1,0 +1,47 @@
+<span> <a mat-raised-button color="warn" routerLink="/homepage">Go to Home</a> </span>
+<br><br>
+<div style="float:left">
+<form class="Job-keyword-Search" (ngSubmit)="jobKeywordSearch()" #myForm="ngForm" style="align-items: center">
+
+    <!-- <b>Search Jobs by keyword:</b> -->
+    <mat-form-field style="margin-left:20em" appearance="fill" >
+      <mat-label>Search Jobs by Keyword</mat-label>
+      <input matInput placeholder="Type Something" [(ngModel)]="keyword" name="enteredkeyword">
+      <!--   <mat-hint>We need your name for the ID badge ;) !</mat-hint>-->
+    </mat-form-field>
+    
+    <span><button mat-raised-button style="margin-left:1em" color="warn" type="submit" md-raised-button>Search Jobs By Keyword</button></span>
+    <span style="font-size: 20px; margin-left:1em"><b> OR </b></span>
+</form>
+</div>
+
+<div style="float:left">
+<!-- <p style="align-items: center; font-size: 20px"><b></b></p> -->
+<form class="Job-Location-Search" (ngSubmit)="jobLocationSearch()" #myForm2="ngForm" style="align-items: center">
+    <!-- <p>  <b>Search Jobs by Location:</b> -->
+  <mat-form-field style="margin-left:1em" appearance="fill">
+    <mat-label>Search Jobs by Location</mat-label>
+    <input matInput placeholder="Boston" [(ngModel)]="loc" name="enteredlocation">
+    <!--   <mat-hint>We need your name for the ID badge ;) !</mat-hint>-->
+  </mat-form-field>
+    <span><button mat-raised-button style="margin-left:1em" color="warn" type="submit" md-raised-button>Search Jobs by Location</button></span>
+</form>
+</div>
+
+<div *ngIf="filteredJobs?.length>0">
+
+  <mat-list>
+    <br>
+    <mat-list-item *ngFor="let j of  filteredJobs">
+      <!-- <img matListAvatar src="j.image" alt="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+       -->
+      <h3 matLine> <span> <a [routerLink]="['../job', j.jobid]" routerLinkActive="active">{{j.title}} </a> </span><br>
+      </h3>
+      <p matLine>
+        <span> Posted by: {{j.postedby}} </span> <br>
+        <span>Location: {{j.location}} </span> <br>
+        <span>Job description: {{j.description}} </span><br>
+      </p>
+    </mat-list-item>
+  </mat-list>
+</div>

@@ -1,0 +1,6 @@
+{
+  "appId": "com.neha",
+  "appName": "JobPortal",
+  "bundledWebRuntime": false,
+  "webDir": "./dist/jobportalfrontend"
+}

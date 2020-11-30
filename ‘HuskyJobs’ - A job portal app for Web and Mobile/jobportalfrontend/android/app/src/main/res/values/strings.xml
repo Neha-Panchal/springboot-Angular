@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">JobPortal</string>
+    <string name="title_activity_main">JobPortal</string>
+    <string name="package_name">com.neha</string>
+    <string name="fileprovider_authority">com.neha.fileprovider</string>
+    <string name="custom_url_scheme">com.neha</string>
+</resources>
